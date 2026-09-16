@@ -4,232 +4,306 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Arthur Henrique Botelho — Portfólio</title>
+<meta name="description" content="Portfólio profissional de Arthur Henrique Botelho — Desenvolvimento de Sistemas, Java, SOA e Banco de Dados.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="sheet-bar">
-  <div class="wrap">
-    <span>FOLHA 01/01 — CURRÍCULO VISUAL</span>
-    <nav>
-      <a href="#sobre">Sobre</a>
-      <a href="#habilidades">Habilidades</a>
-      <a href="#experiencia">Experiência</a>
-      <a href="#formacao">Formação</a>
-      <a href="#cursos">Cursos</a>
-      <a href="#contato">Contato</a>
-    </nav>
-  </div>
-</div>
-
-<header class="cover wrap">
-  <span class="crop tl"></span><span class="crop tr"></span>
-  <span class="crop bl"></span><span class="crop br"></span>
-
-  <div class="id-photo">
-    <img class="id-photo-img" src="foto.jpg" alt="Foto de Arthur Henrique Botelho"
-         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-    <div class="id-photo-fallback">AB</div>
-  </div>
-  <span class="id-photo-tag">Foto</span>
-
-  <svg class="compass" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <circle cx="50" cy="50" r="42" stroke="#1B3A5C" stroke-width="1"/>
-    <path d="M50 8 L56 50 L50 92 L44 50 Z" fill="#1B3A5C" opacity="0.85"/>
-    <path d="M8 50 L50 44 L92 50 L50 56 Z" fill="#1B3A5C" opacity="0.35"/>
-    <text x="50" y="21" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#1B3A5C">N</text>
-  </svg>
-
-  <h1>Arthur Henrique Botelho</h1>
-  <div class="role-line">
-    <span>Desenvolvedor em formação — foco em sistemas web</span>
-  </div>
-  <p class="intro">
-    Estudante de Ciência da Computação e estagiário na Odebrecht, atuando com
-    desenvolvimento em Java, integração de sistemas (SOA) e banco de dados.
-    Comecei atendendo cliente, migrei pra infraestrutura de T.I. e hoje aplico
-    esse histórico no dia a dia com sistemas — PHP ficou da fase do curso técnico,
-    e Python e Angular seguem na bancada de testes.
-  </p>
-  <div class="cta-row">
-    <a class="btn primary" href="#contato">Falar comigo →</a>
-    <a class="btn ghost" href="https://github.com/Arthurbot02" target="_blank" rel="noopener">Ver GitHub</a>
-  </div>
-
-  <div class="titleblock">
-    <div class="row">
-      <div class="cell"><b>Local</b>São Bernardo do Campo, SP</div>
-      <div class="cell"><b>Idade</b>20 anos</div>
-      <div class="cell"><b>Idioma</b>Inglês avançado</div>
+<nav>
+  <div class="container">
+    <div class="nav-links">
+      <button onclick="go('home')">Início</button>
+      <button onclick="go('habilidades')">Habilidades</button>
+      <button onclick="go('sobre')">Sobre</button>
+      <button onclick="go('experiencia')">Experiência</button>
+      <button onclick="go('formacao')">Formação</button>
+      <button onclick="go('cursos')">Cursos</button>
     </div>
-    <div class="row">
-      <div class="cell"><b>Escala</b>1 estagiário : 1 vaga</div>
-      <div class="cell"><b>Revisão</b>Jul/2026</div>
+    <button class="nav-contact-btn" onclick="go('contato')">Contato</button>
+    <button class="nav-toggle" onclick="toggleMenu()" aria-label="Abrir menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-inner">
+      <button onclick="go('home')">Início</button>
+      <button onclick="go('habilidades')">Habilidades</button>
+      <button onclick="go('sobre')">Sobre</button>
+      <button onclick="go('experiencia')">Experiência</button>
+      <button onclick="go('formacao')">Formação</button>
+      <button onclick="go('cursos')">Cursos</button>
+      <button onclick="go('contato')">Contato</button>
     </div>
   </div>
-</header>
+</nav>
 
-<section id="sobre">
-  <div class="wrap">
-    <div class="sec-head"><span class="num">01</span><h2>Sobre</h2><span class="measure"></span></div>
-    <div class="about-grid">
+<section class="hero" id="home">
+  <div class="container">
+    <div class="grid">
       <div>
-        <p>
-          Sou o tipo de pessoa que aprende fazendo: comecei no atendimento ao cliente,
-          entrei na Odebrecht como jovem aprendiz passando por várias frentes de T.I.
-          e hoje sigo lá como estagiário, focado em desenvolvimento de sistemas.
-          Em paralelo, curso Ciência da Computação na UNIP.
-        </p>
-        <p>
-          Meu jeito de trabalhar puxa bastante para lógica e organização — herança de
-          quem já lidou com infraestrutura antes de programar. Gosto de entender como
-          a peça inteira se encaixa antes de sair escrevendo código.
-        </p>
+        <h1>MUITO PRAZER, SOU <span class="text-primary">Arthur Henrique Botelho</span></h1>
+        <p class="role">Desenvolvedor em Formação · Estágio em Desenvolvimento de Sistemas</p>
+        <p class="intro">Estudante de Ciência da Computação e estagiário na Odebrecht, atuando com desenvolvimento em Java, integração de sistemas (SOA) e banco de dados. Comecei atendendo cliente, migrei pra infraestrutura de T.I. e hoje aplico esse histórico no dia a dia com sistemas.</p>
+        <div class="btn-row">
+          <button class="btn-primary" onclick="go('contato')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M4 4h16v16H4z"/><path d="m4 4 8 9 8-9"/></svg>
+            Falar comigo
+          </button>
+          <a class="btn-secondary" href="https://github.com/Arthurbot02" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+            Ver GitHub
+          </a>
+        </div>
       </div>
-      <ul class="spec-list">
-        <li>Objetivo <b>Estágio / Dev. Júnior</b></li>
-        <li>Formação atual <b>Ciência da Computação</b></li>
-        <li>Instituição <b>UNIP</b></li>
-        <li>Situação <b>Em andamento</b></li>
-        <li>Idioma <b>Inglês avançado</b></li>
-      </ul>
+      <div class="photo-wrap">
+        <div class="photo-frame">
+          <div class="glow"></div>
+          <div class="box"><img src="foto.jpg" alt="Foto de Arthur Henrique Botelho"></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="habilidades">
-  <div class="wrap">
-    <div class="sec-head"><span class="num">02</span><h2>Habilidades técnicas</h2><span class="measure"></span></div>
-    <div class="skills-columns">
+  <div class="container">
+    <h2 class="section-title">HABILIDADES <span class="text-primary">TÉCNICAS</span></h2>
+    <div class="skills-panel reveal">
+
       <div>
         <p class="skill-group-label">Domínio avançado</p>
-        <div class="gauge"><div class="gauge-top"><span>HTML</span><span class="pct">avançado</span></div><div class="gauge-track"><div class="gauge-fill" style="width:92%"></div></div></div>
-        <div class="gauge"><div class="gauge-top"><span>CSS</span><span class="pct">avançado</span></div><div class="gauge-track"><div class="gauge-fill" style="width:90%"></div></div></div>
-        <div class="gauge"><div class="gauge-top"><span>JavaScript</span><span class="pct">avançado</span></div><div class="gauge-track"><div class="gauge-fill" style="width:88%"></div></div></div>
-        <div class="gauge"><div class="gauge-top"><span>MySQL</span><span class="pct">avançado</span></div><div class="gauge-track"><div class="gauge-fill" style="width:85%"></div></div></div>
-        <div class="gauge"><div class="gauge-top"><span>PHP</span><span class="pct">avançado · curso técnico</span></div><div class="gauge-track"><div class="gauge-fill" style="width:80%"></div></div></div>
+
+        <div class="gauge">
+          <div class="gauge-top"><span class="name">HTML</span><span class="pct">Avançado</span></div>
+          <div class="gauge-track"><div class="gauge-fill" data-width="92%"></div></div>
+        </div>
+
+        <div class="gauge">
+          <div class="gauge-top"><span class="name">CSS</span><span class="pct">Avançado</span></div>
+          <div class="gauge-track"><div class="gauge-fill" data-width="90%"></div></div>
+        </div>
+
+        <div class="gauge">
+          <div class="gauge-top"><span class="name">JavaScript</span><span class="pct">Avançado</span></div>
+          <div class="gauge-track"><div class="gauge-fill" data-width="88%"></div></div>
+        </div>
+
+        <div class="gauge">
+          <div class="gauge-top"><span class="name">MySQL</span><span class="pct">Avançado</span></div>
+          <div class="gauge-track"><div class="gauge-fill" data-width="85%"></div></div>
+        </div>
+
+        <div class="gauge">
+          <div class="gauge-top"><span class="name">PHP</span><span class="pct">Avançado · curso técnico</span></div>
+          <div class="gauge-track"><div class="gauge-fill" data-width="80%"></div></div>
+        </div>
       </div>
+
       <div>
         <p class="skill-group-label">Em construção</p>
-        <div class="gauge basico"><div class="gauge-top"><span>Java</span><span class="pct">intermediário</span></div><div class="gauge-track"><div class="gauge-fill" style="width:60%"></div></div></div>
-        <div class="gauge basico"><div class="gauge-top"><span>Infraestrutura &amp; SOA</span><span class="pct">básico</span></div><div class="gauge-track"><div class="gauge-fill" style="width:35%"></div></div></div>
-        <div class="gauge basico"><div class="gauge-top"><span>Python</span><span class="pct">básico</span></div><div class="gauge-track"><div class="gauge-fill" style="width:40%"></div></div></div>
-        <div class="gauge basico"><div class="gauge-top"><span>Angular</span><span class="pct">básico</span></div><div class="gauge-track"><div class="gauge-fill" style="width:38%"></div></div></div>
+
+        <div class="gauge constru">
+          <div class="gauge-top"><span class="name">Java</span><span class="pct">Intermediário</span></div>
+          <div class="gauge-track"><div class="gauge-fill" data-width="60%"></div></div>
+        </div>
+
+        <div class="gauge constru">
+          <div class="gauge-top"><span class="name">Infraestrutura &amp; SOA</span><span class="pct">Básico</span></div>
+          <div class="gauge-track"><div class="gauge-fill" data-width="35%"></div></div>
+        </div>
+
+        <div class="gauge constru">
+          <div class="gauge-top"><span class="name">Python</span><span class="pct">Básico</span></div>
+          <div class="gauge-track"><div class="gauge-fill" data-width="40%"></div></div>
+        </div>
+
+        <div class="gauge constru">
+          <div class="gauge-top"><span class="name">Angular</span><span class="pct">Básico</span></div>
+          <div class="gauge-track"><div class="gauge-fill" data-width="38%"></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="about" id="sobre">
+  <div class="container">
+    <div class="grid">
+      <div class="photo-wrap">
+        <div class="photo-frame">
+          <div class="glow"></div>
+          <div class="box"><img src="foto.jpg" alt="Foto de Arthur Henrique Botelho"></div>
+        </div>
+      </div>
+      <div class="reveal">
+        <h2 style="font-size:clamp(1.9rem,4vw,2.6rem); margin-bottom:24px;">UM POUCO SOBRE <span class="text-primary">MIM</span></h2>
+        <div class="about-text">
+          <p>Sou o tipo de pessoa que aprende fazendo: comecei no <strong>atendimento ao cliente</strong>, entrei na Odebrecht como <strong>jovem aprendiz</strong> passando por várias frentes de T.I. e hoje sigo lá como <strong>estagiário</strong>, focado em desenvolvimento de sistemas. Em paralelo, curso <strong>Ciência da Computação</strong> na UNIP.</p>
+          <p>Meu jeito de trabalhar puxa bastante para lógica e organização — herança de quem já lidou com infraestrutura antes de programar. Gosto de entender como a peça inteira se encaixa antes de sair escrevendo código.</p>
+        </div>
+        <div class="mini-tags">
+          <span class="tag">Estágio / Dev. Júnior</span>
+          <span class="tag">Ciência da Computação — UNIP</span>
+          <span class="tag">Inglês avançado</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <section id="experiencia">
-  <div class="wrap">
-    <div class="sec-head"><span class="num">03</span><h2>Experiência</h2><span class="measure"></span></div>
-    <div class="phases">
-      <div class="phase current">
-        <span class="when">Atual · 2 anos</span>
-        <h3>Estagiário — <span class="org">Odebrecht</span></h3>
-        <p>Atuo com desenvolvimento em Java, integração de sistemas (SOA) e banco de dados, aplicando na prática o que venho estudando na faculdade.</p>
-      </div>
-      <div class="phase">
-        <span class="when">1 ano e 3 meses</span>
-        <h3>Jovem aprendiz — <span class="org">Odebrecht</span></h3>
-        <p>Passagem por diferentes áreas de T.I., da infraestrutura ao primeiro contato com desenvolvimento — foi ali que decidi seguir como programador.</p>
-      </div>
-      <div class="phase">
-        <span class="when">3 anos</span>
-        <h3>Atendimento ao cliente</h3>
-        <p>Base de comunicação e resolução de problemas que carrego até hoje para lidar com requisitos e usuários finais.</p>
-      </div>
+  <div class="container">
+    <h2 class="section-title">EXPERIÊNCIA <span class="text-primary">PROFISSIONAL</span></h2>
+
+    <div class="timeline">
+    <div class="exp-card current reveal">
+      <span class="when">Atual · 2 anos</span>
+      <h3>Estagiário em Desenvolvimento de Sistemas</h3>
+      <span class="company">Odebrecht</span>
+      <ul>
+        <li>Atuação atual focada em Java, integração de sistemas (SOA) e banco de dados (MySQL)</li>
+        <li>Aplico no dia a dia a base técnica de infraestrutura adquirida anteriormente, unida à rotina de desenvolvimento</li>
+        <li>Colaboro com times multidisciplinares no desenvolvimento e manutenção de sistemas internos</li>
+      </ul>
+    </div>
+
+    <div class="exp-card reveal">
+      <span class="when">1 ano e 3 meses</span>
+      <h3>Jovem Aprendiz — T.I.</h3>
+      <span class="company">Odebrecht</span>
+      <ul>
+        <li>Circulei por diferentes frentes de Tecnologia da Informação, incluindo suporte e infraestrutura, antes de migrar para desenvolvimento</li>
+        <li>Construí base técnica em ambiente corporativo que fundamentou a transição para a área de sistemas</li>
+      </ul>
+    </div>
+
+    <div class="exp-card reveal">
+      <span class="when">3 anos</span>
+      <h3>Atendimento ao Cliente</h3>
+      <span class="company">Diversas empresas</span>
+      <ul>
+        <li>Desenvolvi comunicação, resolução de problemas e relacionamento com o cliente — habilidades aplicadas hoje no levantamento de requisitos e suporte a usuários</li>
+      </ul>
+    </div>
     </div>
   </div>
 </section>
 
 <section id="formacao">
-  <div class="wrap">
-    <div class="sec-head"><span class="num">04</span><h2>Formação</h2><span class="measure"></span></div>
-    <div class="schema-list">
-      <div class="schema-item">
-        <span class="stat">Em andamento</span>
-        <div><h3>Ciência da Computação</h3><span class="detail">UNIP</span></div>
+  <div class="container">
+    <h2 class="section-title">FORMAÇÃO <span class="text-primary">ACADÊMICA</span></h2>
+    <div class="cards-grid">
+
+      <div class="card reveal">
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
+        </div>
+        <h3>Ciência da Computação</h3>
+        <div class="tag-row"><span class="tag">UNIP</span></div>
+        <p>Em andamento.</p>
       </div>
-      <div class="schema-item">
-        <span class="stat">Concluído</span>
-        <div><h3>Informática para Internet</h3><span class="detail">ETEC Lauro Gomes</span></div>
+
+      <div class="card reveal">
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
+        </div>
+        <h3>Técnico em Informática para Internet</h3>
+        <div class="tag-row"><span class="tag">ETEC Lauro Gomes</span></div>
+        <p>Concluído — foi aqui que tive meu primeiro contato com PHP.</p>
       </div>
-      <div class="schema-item">
-        <span class="stat">Concluído</span>
-        <div><h3>Excel básico ao avançado</h3><span class="detail">Cursinho FEI</span></div>
+
+      <div class="card reveal">
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
+        </div>
+        <h3>Ensino Médio</h3>
+        <div class="tag-row"><span class="tag">E.E. Profª Neusa Figueiredo Marçal</span></div>
+        <p>Concluído.</p>
       </div>
-      <div class="schema-item">
-        <span class="stat">Concluído</span>
-        <div><h3>Preparatório pré-vestibular</h3><span class="detail">Cursinho FEI</span></div>
+
+      <div class="card reveal">
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        </div>
+        <h3>Cursos Complementares</h3>
+        <div class="tag-row"><span class="tag">Cursinho FEI</span></div>
+        <p>Preparatório Pré-Vestibular · Excel Básico ao Avançado.</p>
       </div>
-      <div class="schema-item">
-        <span class="stat">Concluído</span>
-        <div><h3>Ensino Médio</h3><span class="detail">E.E. Profª Neusa Figueiredo Marçal</span></div>
-      </div>
+
     </div>
   </div>
 </section>
 
 <section id="cursos">
-  <div class="wrap">
-    <div class="sec-head"><span class="num">05</span><h2>Cursos em andamento</h2><span class="measure"></span></div>
-    <div class="schema-list">
-      <div class="schema-item">
-        <span class="stat">Udemy</span>
-        <div><h3><a href="https://www.udemy.com/course-dashboard-redirect/?course_id=2067607" target="_blank" rel="noopener">Oracle SOA Suite 12C</a></h3><span class="detail">Em andamento</span></div>
-      </div>
-      <div class="schema-item">
-        <span class="stat">Udemy</span>
-        <div><h3><a href="https://www.udemy.com/course-dashboard-redirect/?course_id=6087057" target="_blank" rel="noopener">Java 360°: Curso Completo do Zero ao Avançado com Projetos</a></h3><span class="detail">Em andamento</span></div>
-      </div>
-      <div class="schema-item">
-        <span class="stat">Udemy</span>
-        <div><h3><a href="https://www.udemy.com/course-dashboard-redirect/?course_id=3569929" target="_blank" rel="noopener">Microsserviços Java com Spring Boot e Spring Cloud</a></h3><span class="detail">Em andamento</span></div>
-      </div>
+  <div class="container">
+    <h2 class="section-title">CURSOS EM <span class="text-primary">ANDAMENTO</span></h2>
+    <div class="cards-grid">
+
+      <a class="card reveal" href="https://www.udemy.com/course-dashboard-redirect/?course_id=2067607" target="_blank" rel="noopener">
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4Z"/></svg>
+        </div>
+        <h3>Oracle SOA Suite 12C</h3>
+        <div class="tag-row"><span class="tag">Udemy</span></div>
+        <p>Em andamento.</p>
+      </a>
+
+      <a class="card reveal" href="https://www.udemy.com/course-dashboard-redirect/?course_id=6087057" target="_blank" rel="noopener">
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4Z"/></svg>
+        </div>
+        <h3>Java 360°: Curso Completo do Zero ao Avançado com Projetos</h3>
+        <div class="tag-row"><span class="tag">Udemy</span></div>
+        <p>Em andamento.</p>
+      </a>
+
+      <a class="card reveal" href="https://www.udemy.com/course-dashboard-redirect/?course_id=3569929" target="_blank" rel="noopener">
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4Z"/></svg>
+        </div>
+        <h3>Microsserviços Java com Spring Boot e Spring Cloud</h3>
+        <div class="tag-row"><span class="tag">Udemy</span></div>
+        <p>Em andamento.</p>
+      </a>
+
     </div>
   </div>
 </section>
 
 <section id="contato">
-  <div class="wrap">
-    <div class="sec-head"><span class="num">06</span><h2>Contato</h2><span class="measure"></span></div>
-    <div class="legend">
-      <div class="legend-title">Legenda de contato</div>
-      <div class="legend-grid">
-        <div class="legend-item">
-          <span class="k">E-mail</span>
-          <a href="mailto:arthurhenrique220206@gmail.com">arthurhenrique220206@gmail.com</a>
-        </div>
-        <div class="legend-item">
-          <span class="k">Telefone</span>
-          <a href="tel:+5511975310702">(11) 97531-0702</a>
-        </div>
-        <div class="legend-item">
-          <span class="k">LinkedIn</span>
-          <a href="https://www.linkedin.com/in/arthur-henrique-aa08b1239" target="_blank" rel="noopener">in/arthur-henrique-aa08b1239</a>
-        </div>
-        <div class="legend-item">
-          <span class="k">GitHub</span>
-          <a href="https://github.com/Arthurbot02" target="_blank" rel="noopener">Arthurbot02</a>
-        </div>
-        <div class="legend-item">
-          <span class="k">Localização</span>
-          <span class="v">São Bernardo do Campo, SP</span>
-        </div>
-        <div class="legend-item">
-          <span class="k">Disponibilidade</span>
-          <span class="v">Estágio / Júnior</span>
-        </div>
-      </div>
+  <div class="container">
+    <h2 class="section-title" style="margin-bottom:14px;">VAMOS <span class="text-primary">CONVERSAR?</span></h2>
+    <p style="text-align:center; color:var(--muted-foreground); max-width:52ch; margin:0 auto 52px;">Estou em busca de uma oportunidade de estágio ou posição júnior na área de desenvolvimento. Será um prazer conversar sobre como posso contribuir com o seu time.</p>
+
+    <div class="contact-grid">
+      <a class="contact-card reveal" href="mailto:arthurhenrique220206@gmail.com">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="m4 4 8 9 8-9"/></svg></div>
+        <div><h3>Email</h3><p>arthurhenrique220206@gmail.com</p></div>
+      </a>
+      <a class="contact-card reveal" href="tel:+5511975310702">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div><h3>Telefone</h3><p>(11) 97531-0702</p></div>
+      </a>
+      <a class="contact-card reveal" href="https://www.linkedin.com/in/arthur-henrique-aa08b1239" target="_blank" rel="noopener">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
+        <div><h3>LinkedIn</h3><p>arthur-henrique-aa08b1239</p></div>
+      </a>
+    </div>
+
+    <div class="contact-cta">
+      <a class="btn-primary" href="mailto:arthurhenrique220206@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M4 4h16v16H4z"/><path d="m4 4 8 9 8-9"/></svg>
+        Enviar Email
+      </a>
     </div>
   </div>
 </section>
 
-<footer>Arthur Henrique Botelho — folha revisada em julho de 2026</footer>
+<footer>Arthur Henrique Botelho — Desenvolvimento de Sistemas</footer>
 
 <script src="script.js"></script>
 </body>
